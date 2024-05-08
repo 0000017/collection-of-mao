@@ -1,2 +1,2 @@
-# Portfolio-of-mao
+# collection-of-mao
 mao作品集web
