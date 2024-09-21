@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    // Shrink the navbar 
+    // k the navbar Shrin
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
