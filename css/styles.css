@@ -444,7 +444,27 @@ legend + * {
   outline-offset: -2px;
   -webkit-appearance: textfield;
 }
+.image-container {
+  position: relative; /* 使容器相对定位 */
+  width: 300px; /* 容器宽度 */
+  height: 300px; /* 容器高度 */
+  overflow: hidden; /* 隐藏溢出部分 */
+  border-radius: 50%; /* 使容器成为圆形 */
+}
 
+.image-container img {
+  width: 50%; /* 将图片宽度设置为容器宽度的50% */
+  height: auto; /* 保持图片比例 */
+  position: absolute; /* 使图片绝对定位 */
+  top: 50%; /* 图片垂直居中 */
+  left: 50%; /* 图片水平居中 */
+  transform: translate(-50%, -50%); /* 中心对齐 */
+  border-radius: 50%; /* 使图片也呈圆形 */
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%); /* 创建一个不透明的圆形蒙版 */
+  mask-position: center calc(50%); /* 将蒙版向下移动4px */
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%); /* 为 Safari 提供前缀 */
+  -webkit-mask-position: center calc(54%); /* Safari的蒙版位置 */
+}
 /* rtl:raw:
 [type="tel"],
 [type="url"],
