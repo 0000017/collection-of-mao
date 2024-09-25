@@ -465,6 +465,73 @@ legend + * {
   -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%); /* 为 Safari 提供前缀 */
   -webkit-mask-position: center calc(54%); /* Safari的蒙版位置 */
 }
+
+/* 实习经历标题 */
+.internship-experience h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px; /* 下方添加间距 */
+  margin-top: 70px; 
+}
+
+/* 项目、角色、时间同一行显示，并添加上下间隔 */
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px; /* 下方添加间距 */
+  padding-top:20px; /* 上方添加一些间距 */
+}
+
+.project-info h3, .project-info .role, .project-info .time {
+  font-size: 18px; /* 确保项目、角色和时间的字体大小一致 */
+  font-weight: bold; /* 确保项目、角色和时间的字体粗细一致 */
+  margin: 0;
+}
+
+/* 工作内容与工作详情同一行显示，并添加上下间隔 */
+.work-content-detail {
+  margin-bottom: 10px; /* 控制内容与下一条记录的间距 */
+}
+
+.work-content {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  width: 70px; /* 减小宽度，缩短与工作详情的间距 */
+  margin-right: 5px; /* 减少右侧间距，缩小与工作详情的间距 */
+  vertical-align: top;
+  white-space: nowrap; /* 禁止换行 */
+
+}
+
+.work-detail {
+  font-size: 16px;
+  font-weight: normal;
+  display: inline-block;
+  max-width: calc(100% - 130px); /* 对应修改，确保工作详情的宽度正确 */
+  text-align: left;
+  word-wrap: break-word;
+  padding-left: 0;
+}
+
+/*开关样式*/
+.project-name {
+  cursor: pointer; /* 让鼠标悬停时有指针样式 */
+  color: #ffffff; /* 字体颜色 */
+  
+}
+
+.project-name:hover {
+  color: #0056b3; /* 鼠标悬停时的颜色 */
+}
+
+/* 隐藏工作详情的样式 */
+.work-details {
+  transition: max-height 0.5s ease; /* 平滑过渡效果 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+}
+
 /* rtl:raw:
 [type="tel"],
 [type="url"],

@@ -20,10 +20,9 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             navbarCollapsible.classList.add('navbar-shrink')
         }
-
     };
 
-    // k the navbar Shrin
+    // Call the navbar shrink function
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
@@ -51,4 +50,24 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+ // 为每个项目名称、角色和时间添加事件监听器
+const projectInfos = document.querySelectorAll('.project-info');
+
+projectInfos.forEach(info => {
+    info.addEventListener('click', () => {
+        // 找到所有的工作内容详情，直到下一个项目
+        let nextSibling = info.nextElementSibling;
+        while (nextSibling && !nextSibling.classList.contains('project-info')) {
+            if (nextSibling.classList.contains('work-content-detail')) {
+                // 切换显示状态
+                if (nextSibling.style.display === 'none' || nextSibling.style.display === '') {
+                    nextSibling.style.display = 'block'; // 显示工作内容
+                } else {
+                    nextSibling.style.display = 'none'; // 隐藏工作内容
+                }
+            }
+            nextSibling = nextSibling.nextElementSibling; // 移动到下一个兄弟元素
+        }
+    });
+});
 });
