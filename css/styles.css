@@ -445,15 +445,19 @@ legend + * {
   -webkit-appearance: textfield;
 }
 .image-container {
-  position: relative; /* 使容器相对定位 */
+  position: relative;
   width: 300px; /* 容器宽度 */
   height: 300px; /* 容器高度 */
   overflow: hidden; /* 隐藏溢出部分 */
-  border-radius: 50%; /* 使容器成为圆形 */
+  border-radius: 50%; /* 保持圆形 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+  border: none; /* 设置描边为无 */
+  background-color: rgba(0, 0, 0, 0); /* 可以设置背景色，但可以保持透明 */
+  margin-bottom: 50px; /* 添加与下方内容的间隔，调整此值以增减间距 */
 }
 
 .image-container img {
-  width: 50%; /* 将图片宽度设置为容器宽度的50% */
+  width: 100%; /* 将图片宽度设置为容器的100% */
   height: auto; /* 保持图片比例 */
   position: absolute; /* 使图片绝对定位 */
   top: 50%; /* 图片垂直居中 */
@@ -461,17 +465,17 @@ legend + * {
   transform: translate(-50%, -50%); /* 中心对齐 */
   border-radius: 50%; /* 使图片也呈圆形 */
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%); /* 创建一个不透明的圆形蒙版 */
-  mask-position: center calc(50%); /* 将蒙版向下移动4px */
+  mask-position: center calc(50%); /* 将蒙版向下移动 */
   -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%); /* 为 Safari 提供前缀 */
   -webkit-mask-position: center calc(54%); /* Safari的蒙版位置 */
 }
-
 /* 实习经历标题 */
 .internship-experience h2 {
-  font-size: 24px;
+  font-size: px;
   font-weight: bold;
   margin-bottom: 30px; /* 下方添加间距 */
   margin-top: 70px; 
+  color: #212529; /* 更改标题颜色 */
 }
 
 /* 项目、角色、时间同一行显示，并添加上下间隔 */
@@ -481,12 +485,14 @@ legend + * {
   align-items: center;
   margin-bottom: 30px; /* 下方添加间距 */
   padding-top:20px; /* 上方添加一些间距 */
+
 }
 
 .project-info h3, .project-info .role, .project-info .time {
   font-size: 18px; /* 确保项目、角色和时间的字体大小一致 */
   font-weight: bold; /* 确保项目、角色和时间的字体粗细一致 */
   margin: 0;
+  color: #212529; /* 更改标题颜色 */
 }
 
 /* 工作内容与工作详情同一行显示，并添加上下间隔 */
@@ -502,6 +508,7 @@ legend + * {
   margin-right: 5px; /* 减少右侧间距，缩小与工作详情的间距 */
   vertical-align: top;
   white-space: nowrap; /* 禁止换行 */
+  color: #2c3e50; /* 更改标题颜色 */
 
 }
 
@@ -513,6 +520,7 @@ legend + * {
   text-align: left;
   word-wrap: break-word;
   padding-left: 0;
+  color: #2c3e50; /* 更改标题颜色 */
 }
 
 /*开关样式*/
@@ -523,7 +531,7 @@ legend + * {
 }
 
 .project-name:hover {
-  color: #0056b3; /* 鼠标悬停时的颜色 */
+  color: #5d9ee3; /* 鼠标悬停时的颜色 */
 }
 
 /* 隐藏工作详情的样式 */
@@ -532,6 +540,48 @@ legend + * {
   overflow: hidden; /* 隐藏溢出的内容 */
 }
 
+
+/* 分割线 */
+.minimalist-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.minimalist-divider .divider-custom-line {
+  width: 0px; /* 控制线的长度 */
+  height: 2px; /* 控制线的厚度 */
+  background-color: #110f0f; /* 白色 */
+}
+/*复制样式*/
+/* 隐藏电话号码的样式 */
+#phone-number {
+  display: none; /* 隐藏电话号码文本 */
+}
+
+/* 复制按钮的样式 */
+/* 父容器的居中设置 */
+.phone-number-container {
+  display: flex;        /* 使用 Flexbox 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center;  /* 垂直居中 */
+  height: 100%;         /* 可选：设置高度以适应按钮的容器 */
+}
+
+
+
+/*WX图片*/
+.responsive-image {
+  width: 30%; /* 图片宽度与容器相同 */
+  height: auto; /* 保持图片比例 */
+  margin: 0 auto;
+  display: block; /* 防止底部空隙 */
+  margin-top: 10px; /* 可选：增加图片与文本之间的间距 */
+
+}
+
+lead mb-0
 /* rtl:raw:
 [type="tel"],
 [type="url"],
@@ -3170,10 +3220,11 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light {
-  --bs-btn-color: #f8f9fa;
-  --bs-btn-border-color: #f8f9fa;
+  --bs-btn-hover-color:#000;
+  --bs-btn-color: #198754;
+  --bs-btn-border-color: #198754;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f8f9fa;
+  --bs-btn-hover-bg: #1abc9c;
   --bs-btn-hover-border-color: #f8f9fa;
   --bs-btn-focus-shadow-rgb: 248, 249, 250;
   --bs-btn-active-color: #000;

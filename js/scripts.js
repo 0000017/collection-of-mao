@@ -70,4 +70,31 @@ projectInfos.forEach(info => {
         }
     });
 });
+function toggleCopyButton() {
+    // 获取按钮元素
+    var copyButton = document.getElementById("copy-button");
+    
+    // 切换按钮的显示状态
+    if (copyButton.style.display === "none" || copyButton.style.display === "") {
+        copyButton.style.display = "inline-block"; // 显示按钮
+    } else {
+        copyButton.style.display = "none"; // 隐藏按钮
+    }
+}
+
+
+function copyToClipboard() {
+    // 获取电话号码元素文本
+    var phoneNumber = document.getElementById("copy-switch").innerText;
+
+    // 使用 Clipboard API 复制文本
+    navigator.clipboard.writeText(phoneNumber)
+        .then(function() {
+            // 显示复制成功提示
+            alert("电话号码已复制: " + phoneNumber);
+        })
+        .catch(function(error) {
+            console.error("复制失败: ", error);
+        });
+}
 });
