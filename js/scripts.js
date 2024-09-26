@@ -97,4 +97,32 @@ function copyToClipboard() {
             console.error("复制失败: ", error);
         });
 }
+// 获取元素
+const imageContainer = document.getElementById('image-container');
+const playImage = document.getElementById('play-image');
+const music = document.getElementById('music');
+
+// 旋转角度
+let angle = 0;
+let isPlaying = false;
+let animationFrameId;
+
+// 点击事件
+imageContainer.addEventListener('click', () => {
+    if (isPlaying) {
+        music.pause(); // 停止音乐
+        cancelAnimationFrame(animationFrameId); // 取消旋转动画
+    } else {
+        music.play(); // 播放音乐
+        rotateImage(); // 开始旋转
+    }
+    isPlaying = !isPlaying; // 切换状态
+});
+
+// 旋转图片的函数
+function rotateImage() {
+    angle = (angle + 0.3) % 360; // 每次增加1度
+    playImage.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; // 应用旋转
+    animationFrameId = requestAnimationFrame(rotateImage); // 继续旋转
+}
 });
