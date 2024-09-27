@@ -11181,4 +11181,8 @@ html {
 
 .copyright {
   background-color: #1a252f;
+  
+}
+.copyright .container small {
+    font-size: 12px; /* 你可以根据需要调整这个值 */
 }
